@@ -1,0 +1,16 @@
+{
+  "name": "sailpoint-sdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.0.0",
+    "sailpoint-api-client": "^1.7.0"
+  }
+}
