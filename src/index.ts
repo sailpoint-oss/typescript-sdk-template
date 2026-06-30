@@ -1,5 +1,5 @@
 import { SailPoint, Configuration, Paginator } from "sailpoint-api-client"
-import { SearchV1 } from "sailpoint-api-client/dist/access_model_metadata/api"
+import { Search } from "sailpoint-api-client/dist/access_model_metadata/api"
 
 const getTransforms = async () => {
     // Initialize configuration; this requests a token using your configured credentials
@@ -23,12 +23,12 @@ const searchIdentities = async () => {
     let apiConfig = new Configuration()
     let api = new SailPoint.SearchApi(apiConfig)
 
-    const searchV1: SearchV1 = {
+    const search: Search = {
         indices: ["identities"],
         query: { query: "*" },
         sort: ["-name"]
     }
-    const val = await Paginator.paginateSearchApi(api, searchV1, 250, 1000)
+    const val = await Paginator.paginateSearchApi(api, search, 250, 1000)
     console.log(val.data.length)
 }
 
